@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+.accent-line {
+  display: block;
+  width: 65px;
+  height: 4px;
+  background-color: $color-accent;
+  border-radius: 2px;
+  margin-bottom: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  &--responsive-left {
+    @include breakpoint(md) {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+

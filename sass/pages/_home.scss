@@ -1,0 +1,347 @@
+@use "sass:map";
+@use "../abstracts/" as *;
+
+.section-hero {
+  padding-top: 62px;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+    url(../img/bg-hero.jpg) center/cover no-repeat;
+  color: $color-white;
+
+  &__inner {
+    padding: 153px 0;
+
+    @include breakpoint(md) {
+      padding: 143px 0;
+    }
+  }
+    
+  &__content {
+    max-width: 592px;
+    text-align: center;
+    
+    @include breakpoint(md) {
+      text-align: left; 
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+
+  &__desc {
+    font-size: 14px;
+    margin-bottom: 32px;
+
+    @include breakpoint(md) {
+      font-size: 18px;
+    }
+  }
+}
+
+
+/* Section Clients */
+.section-clients {
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: map.get($color-neutral, 900);
+    text-align: center;
+    margin-bottom: 32px;
+
+    @include breakpoint(md) {
+      font-size: 24px;
+    }
+  }
+
+  &__logos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: map.get($color-neutral, 50);
+    height: 68px;
+
+    img {
+      max-width: 100px;   
+      object-fit: contain; 
+    }
+  }
+}
+
+
+// Section About
+.section-about {
+  text-align: center;
+
+  @include breakpoint(md) {
+    text-align: left;
+  }
+
+  &__content {
+    padding-top: 32px;
+
+    @include breakpoint(md) {
+      padding-top: 0;
+    }
+  }
+
+  &__photo {
+   border-radius: 0 20px 20px 0;
+  }
+
+  &__desc {
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 1.8;
+    @include breakpoint(md) {
+      text-align: left;
+    }
+  }
+}
+
+
+/* Section Services */
+.section-services {
+  color: $color-white;
+
+  &__title {
+    text-align: center;
+    color: $color-white;
+
+    @include breakpoint(md) {
+      margin-bottom: 50px;
+      text-align: left;
+    }
+  }
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+
+    @include breakpoint(md) {
+      justify-content: flex-end;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 32px;
+
+  &__icon-wrapper {
+    flex: 0 0 68px;
+  }
+
+   &__icon {
+    width: 60px;
+    height: 60px;
+    color: $color-accent;
+  }
+
+  &__content {
+      flex: 1;
+    }
+  
+  &__title {
+    margin-bottom: 12px;
+  }
+
+   &__description {
+      font-size: 14px;
+      line-height: 1.55;
+
+      color: map.get($color-neutral, 300);
+    }
+}
+
+
+// Section Why Us 
+.why-us {
+  &__description {
+    color: map.get($color-neutral, 500);
+    margin-bottom: 24px;
+    text-align: center;
+    @include breakpoint(md) {
+      text-align: left;
+    }
+  }
+
+  // List Items
+  &__list {
+    margin: 0 0 32px 0;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: map.get($color-neutral, 900);
+    margin-bottom: 10px;
+
+    strong {
+      font-weight: 600;
+    }
+  }
+
+  &__bullet {
+    width: 6px;
+    height: 6px;
+    background-color: $color-accent;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    object-fit: cover;
+    border-radius: 20px 0 0 20px;
+  }
+
+  // Cards Bottom Section
+  &__cards-wrapper {
+    margin-top: 24px;
+
+    @include breakpoint(md) {
+      margin-top: 48px;
+    }
+  }
+
+  &__card {
+    background-color: map.get($color-neutral, 900);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+    height: 100%;
+    box-sizing: border-box;
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card-icon-wrapper {
+    flex-shrink: 0;
+  }
+
+  &__card-icon {
+    width: 32px;
+    height: 32px;
+    stroke: $color-accent;
+  }
+
+  &__card-body {
+    flex-grow: 1;
+  }
+
+  &__card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-white;
+    margin: 0 0 6px 0;
+  }
+
+  &__card-text {
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+
+/* Section FAQ */
+.section-faq {
+  background-color: map.get($color-neutral, 100);
+
+  &__title {
+    text-align: center;
+  }
+
+  &__box {
+    padding: 32px;
+    border: 1px solid map.get($color-neutral, 200);
+    background: $color-white;
+    border-radius: 12px;
+  }
+
+  &__box .accent-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__list {
+     border-top: 1px solid map.get($color-neutral, 200);
+  }
+
+  &__item:not(:last-child) {
+    border-bottom: 1px solid map.get($color-neutral, 200);
+  }
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: map.get($color-neutral, 900);
+     transition: background-color 0.25s ease, color 0.25s ease;
+
+    &:hover {
+      background-color: rgba(69, 196, 233, 0.08);
+      color: $color-accent;
+    }
+  }
+
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: 1px solid map.get($color-neutral, 200);
+    border-radius: 50%;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  &__answer {
+    padding: 0 56px 24px 0;
+  }
+
+  &__answer p {
+    max-width: 600px;
+    color: map.get($color-neutral, 500);
+    font-size: 15px;
+  }
+
+  &__item[open] .section-faq__icon {
+    transform: rotate(45deg);
+  }
+}
+
+
+
+

@@ -1,0 +1,172 @@
+@use "sass:map";
+@use "../abstracts/" as *;
+
+/* =========================================
+   Footer Component (Mobile-First & Clean SVG)
+   ========================================= */
+.footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 48px 0 24px;
+  
+  /* Mobile-First Default: Rata Tengah & Ukuran Font Kecil */
+  text-align: center;
+  font-size: $font-size-base-sm;
+
+  .row {
+    row-gap: 36px;
+  }
+
+  &__brand {
+    margin-bottom: 8px;
+  }
+
+  &__logo {
+    width: 85px !important;       /* Memaksa ukuran lebar di mobile */
+    max-width: 85px !important;   /* Mencegah nilai lain masuk */
+    height: auto;
+    margin: 0 auto 14px auto;
+  }
+
+  &__desc {
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 320px;
+    font-size: 13px;
+  }
+
+  &__heading {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  &__nav-list, 
+  &__contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__nav-link, 
+  &__contact-link {
+    color: #94a3b8;
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 0;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #38bdf8; // Warna aksen sky-blue
+    }
+  }
+
+  /* Styling Kontak & SVG Ikon (Mobile: Vertikal Rata Tengah) */
+  &__contact-list {
+    li {
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center;
+      gap: 6px; 
+      margin-bottom: 16px;
+      text-align: center;
+    }
+  }
+
+  &__contact-icon {
+    flex-shrink: 0;
+    color: #38bdf8; // Memberikan aksen warna pada ikon SVG
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background 0.3s ease, color 0.3s ease;
+
+    svg {
+      color: #38bdf8;
+      transition: color 0.3s ease;
+    }
+
+    &:hover {
+      background-color: #38bdf8;
+      color: #0f172a;
+
+      svg {
+        color: #0f172a; // Ikon berubah warna saat di-hover
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+  }
+
+  /* =========================================
+     Desktop & Tablet Enhancement (Breakpoint MD)
+     ========================================= */
+  @include breakpoint(md) {
+    padding: 64px 0 32px;
+    text-align: left; // Berubah jadi rata kiri di layar besar
+    font-size: $font-size-base-md; // Naik ke ukuran font desktop
+
+    .row {
+      row-gap: 0;
+    }
+
+    &__logo {
+      width: 100px !important;
+      max-width: 100px !important;
+      margin: 0 0 16px 0;
+    }
+
+    &__desc {
+      margin: 0;
+    }
+
+    /* Mengembalikan posisi item kontak & sosmed agar rata kiri di desktop */
+    &__contact-list li {
+      flex-direction: row; 
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 10px;
+      text-align: left;
+      margin-bottom: 12px;
+    }
+
+    &__socials {
+      justify-content: flex-start;
+    }
+
+    &__bottom {
+      margin-top: 48px;
+      font-size: 13px;
+    }
+  }
+}

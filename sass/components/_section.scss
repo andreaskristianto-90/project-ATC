@@ -1,0 +1,50 @@
+@use "sass:map";
+@use "../abstracts/" as *;
+
+.section {
+  padding: 40px 0;
+
+  @include breakpoint(md) {  
+    padding: 60px 0;
+  }
+
+  &--muted {
+    background-color: map.get($color-neutral, 900);
+  }
+
+  &--white {
+    background-color: $color-white;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 624px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: map.get($color-neutral, 900);
+
+    @include breakpoint(md) {
+      margin-bottom: 24px;
+    }
+
+    &--white {
+      color: $color-white;
+    }
+
+    &--responsive {
+     text-align: center;
+      @include breakpoint(md) {
+        text-align: left;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,104 @@
+@use "sass:map";
+@use "../abstracts/" as *;
+
+// Variables
+$wa-color: #25d366;
+$wa-hover-color: #128c7e;
+$text-white: #ffffff;
+$tooltip-bg: #333333;
+$shadow-mobile: 0 4px 10px rgba(0, 0, 0, 0.2);
+$shadow-desktop: 0 6px 16px rgba(0, 0, 0, 0.3);
+
+
+// Floating WhatsApp Component
+.floating-wa {
+  // --- Standard Mobile Styling (Default / Minimum Width) ---
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 52px;
+  height: 52px;
+  background-color: $wa-color;
+  color: $text-white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow-mobile;
+  z-index: 9999;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 26px;
+    height: 26px;
+    fill: currentColor;
+  }
+
+  // Element Tooltip (Mobile default: Hidden)
+  &__tooltip {
+    display: none;
+  }
+
+  // Mobile Active/State Feedback
+  &:active {
+    transform: scale(0.95);
+  }
+
+  // --- Enhancement for Larger Screens (Desktop & Tablet) ---
+  @include breakpoint(md) {
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    // Tampilkan & Konfigurasi Tooltip hanya pada Layar Besar
+    &__tooltip {
+      display: block;
+      position: absolute;
+      right: 70px;
+      background-color: $tooltip-bg;
+      color: $text-white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateX(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+
+      // Panah kecil tooltip (Triangle Pseudo-element)
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent $tooltip-bg;
+      }
+    }
+
+    // Hover Effect khusus Layar Desktop
+    &:hover {
+      background-color: $wa-hover-color;
+      transform: scale(1.1);
+      box-shadow: $shadow-desktop;
+
+      .floating-wa__tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+  }
+}

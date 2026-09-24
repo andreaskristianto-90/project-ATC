@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "../abstracts/" as *;
+
+.btn {
+  display: inline-block;
+  border-radius: 8px;
+  font-weight: 500;
+  line-height: 1.125;
+  text-align: center;
+  transition: background-color 0.3s ease;
+
+  @include breakpoint(md) {
+    line-height: 1.4;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #0ea5e9;
+  }
+  
+  &--md {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  &--sm {
+    padding: 9px 16px;
+    font-size: 14px;
+  }
+
+  &--icon-md {
+    padding: 14px;
+  }
+
+  &--icon-sm {
+    padding: 9px;
+  }
+  
+
+  &--transparent {
+    background-color: transparent;
+    color: $color-white;
+    border: 1px solid $color-white;
+  }
+
+  &--blue {
+    background-color:  $color-accent;
+    color: $color-white;
+    border-color: $color-accent;
+  }
+
+  &--hamburger {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+}
+

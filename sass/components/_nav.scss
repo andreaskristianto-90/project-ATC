@@ -1,0 +1,214 @@
+@use "sass:map";
+@use "../abstracts/" as *;
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 100;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+  }
+
+  &__logo-atc {
+    display: flex;
+    align-items: center;
+    color: $color-white;
+  }
+
+  &__logo {
+    height: 42px;
+    width: auto;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+
+    @include breakpoint(md) {
+      height: 52px;
+    }
+  }
+
+  /* -------------------------------------------------------------
+     MOBILE STYLE (Default)
+     ------------------------------------------------------------- */
+  &__content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: map.get($color-neutral, 900); // Sesuaikan warna background dropdown
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+    /* Transisi Halus saat Menu Dibuka */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+
+    /* Class yang dipicu oleh JavaScript */
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    a {
+      color: $color-white;
+      font-weight: 500;
+      display: block;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+
+    /* Tambahkan style ketika menu sedang aktif */
+    &.is-current {
+      a {
+        color: $color-accent;
+        font-weight: 600;     
+      }
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    width: 100%;
+    background-color: map.get($color-neutral, 200);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /* -------------------------------------------------------------
+     DESKTOP STYLE (min-width Breakpoint)
+     ------------------------------------------------------------- */
+  @include breakpoint(md) {
+    &__content {
+      /* Reset style mobile ke layout baris horizontal */
+      position: static;
+      width: auto;
+      background-color: transparent;
+      padding: 0;
+      box-shadow: none;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+
+      /* Reset visibilitas agar selalu tampil di desktop */
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition: none;
+    }
+
+    &__list {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__item {
+      padding: 10px 16px;
+      border-bottom: none;
+
+      a {
+        position: relative;
+
+        &:hover::after {
+          transform: scaleX(0.5);
+        }
+      }
+    }
+
+    &__divider {
+      align-self: stretch;
+      width: 1px;
+      height: auto;
+    }
+
+    &__actions {
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+
+      .btn {
+        width: auto;
+      }
+    }
+  }
+}
+
+/* Kontraktor Tools Mobile (Bahasa + Hamburger) */
+.nav__mobile-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Jarak antara tombol bahasa dan hamburger */
+
+  @include breakpoint(md) {
+     display: none;
+  }
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent; 
+  border-radius: 50px;
+  padding: 3px;
+  margin-left: 12px;
+
+  &__item {
+    color: map.get($color-neutral, 400);
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &--active {
+      background-color: #fff;
+      color: #0f172a; // Warna teks gelap kontras
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+
+
+

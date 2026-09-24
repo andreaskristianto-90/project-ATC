@@ -1,0 +1,47 @@
+@use "sass:math";
+@use "../abstracts/" as *;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: $row-width + $column-gutter;
+  max-width: 100%;
+  margin: 0 auto;
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &__col {
+    display: block;
+    padding: 0 math.div($column-gutter, 2);
+  }
+
+  &__col--centered {
+    margin: 0 auto;
+  }
+
+  &--gap {
+    row-gap: 12px;
+    
+    @include breakpoint(md) {
+      row-gap: 32px;
+    }
+  }
+}
+
+
+@mixin generate-columns($bp) {
+  @for $i from 1 through 12 {
+    .row__col--#{$bp}-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  } 
+}
+
+@each $bp, $_width in $breakpoints {
+  @include breakpoint($bp) {
+    @include generate-columns($bp);
+  }
+}
+

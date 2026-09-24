@@ -1,0 +1,40 @@
+@use "sass:list";
+@use "sass:map";
+
+$color-neutral: (
+  50: #F9FAFB,
+  100: #F3F4F6,
+  200: #E5E7EB,
+  300: #D1D5DB,
+  400: #9CA3AF,
+  500: #6B7280,
+  600: #4B5563,
+  700: #374151,
+  800: #1F2937,
+  900: #111827,
+);
+
+$color-accent: #45C4E9;
+$color-hover: #0ea5e9;
+
+$color-black: #020C17;
+$color-white: #fff;
+
+$color-border: map.get($color-neutral, 200);
+
+$row-width: 1080px;
+$column-gutter: 32px;
+
+$font-fallback: (Helvetica, Arial, sans-serif);
+
+$font-stack-body: list.join("Inter", $font-fallback);
+$font-stack-heading: list.join("Inter Tight", $font-fallback);
+
+$font-size-base-sm: 14px;
+$font-size-base-md: 16px;
+
+$breakpoints: (
+  sm: 0px,
+  md: 768px,
+  lg: 1024px,
+)

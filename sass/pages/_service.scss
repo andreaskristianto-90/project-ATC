@@ -1,0 +1,85 @@
+@use "sass:map";
+@use "../abstracts/" as *;
+
+.service-hero {
+  padding-top: 62px;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+    url(../img/service-hero.jpg) center / cover no-repeat;
+  color: $color-white;
+
+  &__inner {
+    padding: 153px 0;
+
+    @include breakpoint(md) {
+      padding: 143px 0;
+    }
+  }
+    
+  &__content {
+    max-width: 592px;
+    text-align: center;
+    
+    @include breakpoint(md) {
+      text-align: left; 
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+}
+
+
+/* Offerings */
+.offerings {
+  background: map.get($color-neutral, 100);
+}
+
+.offering-card {
+    margin-bottom: 32px;
+    padding: 10px 10px 1px;
+    background: map.get($color-neutral, 50);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+    }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    aspect-ratio: 338 / 216;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 600;
+    min-height: 2lh;
+    color: map.get($color-neutral, 900);
+  }
+
+    &__desc {
+    margin-bottom: 24px;
+    min-height: 3lh;
+
+    @include breakpoint(md) {
+      min-height: 3lh;
+    }
+  }
+}
+
+

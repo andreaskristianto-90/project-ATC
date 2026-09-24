@@ -1,0 +1,358 @@
+@use "sass:map";
+@use "../abstracts/" as *;
+
+/* =========================================
+   About Features Section (Background Putih)
+   ========================================= */
+.about-features {
+  background-color: #ffffff; // Latar belakang putih bersih
+  color: #0f172a;
+  padding: 80px 0;
+
+  &__header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+
+    @include breakpoint(md) {
+      font-size: 34px;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-base-sm;
+    color: #64748b;
+    line-height: 1.6;
+
+    @include breakpoint(md) {
+      font-size: $font-size-base-md;
+    }
+  }
+
+  /* Kartu Nilai / Keunggulan (Gaya Terang) */
+  &__card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 35px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__icon-box {
+    width: 56px;
+    height: 56px;
+    background-color: rgba(56, 189, 248, 0.15);
+    color: #0284c7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  &__card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 12px;
+
+    @include breakpoint(md) {
+      font-size: 20px;
+    }
+  }
+
+  &__card-desc {
+    font-size: $font-size-base-sm;
+    color: #334155;
+    line-height: 1.6;
+
+    @include breakpoint(md) {
+      font-size: $font-size-base-md;
+    }
+  }
+}
+
+
+/* =========================================
+   Work Process Component (Mobile-First)
+   ========================================= */
+.work-process {
+  background-color: #0b0f19; // Latar belakang gelap industrial
+  color: #fff;
+  text-align: center; // Mobile-first: Teks rata tengah
+
+  /* Spasi antar baris grid */
+  .row {
+    row-gap: 40px;
+    
+    @include breakpoint(md) {
+      row-gap: 0;
+    }
+  }
+
+  /* Header Section */
+  &__header {
+    display: flex;
+    flex-direction: column; // Mobile: Ditumpuk ke bawah
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @include breakpoint(md) {
+      flex-direction: row; // Desktop: Berjajar ke samping (judul & tombol)
+      justify-content: space-between;
+      align-items: flex-end;
+      text-align: left;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__header-text {
+    max-width: 650px;
+  }
+
+  &__title {
+    color: $color-white;
+
+    @include breakpoint(md) {
+      font-size: 36px;
+    }
+  }
+
+
+  /* Kartu Tahapan (Cards) */
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  /* Lingkaran Putih Besar */
+  &__circle-icon {
+    width: 110px;
+    height: 110px;
+    background-color: #ffffff;
+    color: #0b0f19;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    @include breakpoint(md) {
+      width: 110px;
+      height: 110px;
+    }
+  }
+
+  /* Badge Nomor Biru (1, 2, 3, 4) */
+  &__number {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    width: 32px;
+    height: 32px;
+    background-color: #38bdf8;
+    color: #0b0f19;
+    // font-size: 14px;
+    // font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    z-index: 2;
+
+    @include breakpoint(md) {
+      left: 25px;
+      width: 30px;
+      height: 30px;
+      font-size: 15px;
+    }
+  }
+
+  &__step-title {
+    font-size: 18px;
+    color: $color-white;
+    margin-bottom: 12px;
+
+    @include breakpoint(md) {
+      font-size: 20px;
+    }
+  }
+
+  &__step-desc {
+    font-size: $font-size-base-sm;
+    color: #94a3b8;
+    line-height: 1.5;
+    max-width: 280px;
+    margin: 0 auto;
+
+    @include breakpoint(md) {
+      font-size: $font-size-base-md;
+    }
+  }
+}
+
+
+// Testimonial Section
+/* =========================================
+   Testimonial Component (Background Putih)
+   ========================================= */
+.testimonial {
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 80px 0;
+  overflow: hidden;
+
+  &__header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+  }
+
+  &__line {
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #38bdf8;
+    margin: 0 auto 16px auto;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+
+    @include breakpoint(md) {
+      font-size: 36px;
+    }
+  }
+
+
+  /* Slider Container dengan Pengaman Scroll Snap Native CSS */
+  &__slider-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hilangkan scrollbar di Firefox */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none; /* Hilangkan scrollbar di Chrome/Safari */
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 24px;
+  }
+
+  /* Kartu Testimoni */
+  &__card {
+    /* Mobile: 1 kartu memenuhi hampir seluruh lebar layar */
+    flex: 0 0 88%;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    scroll-snap-align: start; /* Mengunci presisi saat digeser */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Desktop (Breakpoint MD): Tepat 2 kartu tampil berdampingan di depan */
+    @include breakpoint(md) {
+      flex: 0 0 calc(50% - 12px); 
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &__rating {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-size: $font-size-base-sm;
+    color: #334155;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-style: italic;
+
+    @include breakpoint(md) {
+      font-size: $font-size-base-md;
+    }
+  }
+
+  &__client {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__avatar-placeholder {
+    width: 45px;
+    height: 45px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: $font-size-base-sm;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-size: $font-size-base-sm;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 2px;
+
+    @include breakpoint(md) {
+      font-size: $font-size-base-md;
+    }
+  }
+
+  &__role {
+    font-size: 12px;
+    color: #64748b;
+  }
+}
