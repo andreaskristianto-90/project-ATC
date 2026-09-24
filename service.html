@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ID">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,16 +16,23 @@
   <header class="nav">
     <div class="row">
       <div class="row__col row__col--sm-12">
-        <div class="nav__inner">
+        <nav class="nav__inner">
           <div class="nav__logo-atc">
             <img src="img/logo-atc.png" alt="ATC logo" class="nav__logo">
             <span>ATC</span>
           </div>
-          <button type="button" class="btn--hamburger hide-for-md" aria-label="Toggle Navigation" aria-expanded="false">
-           <svg width="28" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 6H20M4 12H20M4 18H20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-          </button>
+
+          <!-- Language switcher + hamburger button -->
+          <div class="nav__mobile-tools hide-for-md">
+            <div class="lang-switch">
+            <a href="service.html" class="lang-switch__item lang-switch__item--active" title="Indonesia">ID</a>
+            <a href="en/service.html" class="lang-switch__item" title="English">EN</a>
+            </div>
+            <button type="button" class="btn--hamburger hide-for-md" aria-label="Toggle Navigation" aria-expanded="false">
+            <svg width="28" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg>
+            </button>
+          </div>
+
           <div class="nav__content">
             <ul class="nav__list">
               <li class="nav__item">
@@ -34,7 +41,7 @@
               <li class="nav__item">
                 <a href="about.html">Tentang Kami</a>
               </li>
-              <li class="nav__item">
+              <li class="nav__item is-current">
                 <a href="service.html">Layanan</a>
               </li>
               <li class="nav__item">
@@ -44,15 +51,20 @@
             <div class="nav__divider"></div>
             <div class="nav__actions">
               <a href="contact.html" class="btn btn--sm btn--transparent">Kontak Kami</a>
+              <div class="lang-switch show-for-md">
+                <a href="service.html" class="lang-switch__item lang-switch__item--active" title="Indonesia">ID</a>
+                <a href="en/service.html" class="lang-switch__item" title="English">EN</a>
+            </div>
             </div>
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   </header>
 
+  <main>
   <!-- Section Hero -->
-  <div class="service-hero">
+  <section class="service-hero">
     <div class="row">
       <div class="row__col row__col--sm-12">
         <div class="service-hero__inner">
@@ -63,10 +75,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
    <!-- Section Offerings -->
-  <div class="section offerings">
+  <section class="section offerings">
     <div class="row row--gap">
       <div class="row__col row__col--sm-12 row__col--lg-4">
         <div class="offering-card">
@@ -158,8 +170,8 @@
         </div>
       </div>
     </div>
-  </div>
-  
+  </section>
+  </main>
 
    <!-- Footer -->
  <footer class="footer">
@@ -179,11 +191,11 @@
     <div class="row__col row__col--sm-12 row__col--lg-3">
       <h4 class="footer__heading">Navigasi</h4>
       <ul class="footer__nav-list">
-        <li><a href="#" class="footer__nav-link">Home</a></li>
-        <li><a href="#" class="footer__nav-link">Tentang Kami</a></li>
-        <li><a href="#" class="footer__nav-link">Layanan</a></li>
-        <li><a href="#" class="footer__nav-link">Klien</a></li>
-        <li><a href="#" class="footer__nav-link">Kontak</a></li>
+        <li><a href="index.html" class="footer__nav-link">Home</a></li>
+        <li><a href="about.html" class="footer__nav-link">Tentang Kami</a></li>
+        <li><a href="service.html" class="footer__nav-link">Layanan</a></li>
+        <li><a href="client.html" class="footer__nav-link">Klien</a></li>
+        <li><a href="contact.html" class="footer__nav-link">Kontak</a></li>
       </ul>
     </div>
 
