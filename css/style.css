@@ -1607,15 +1607,23 @@ summary::-webkit-details-marker {
   border-radius: 0 20px 20px 0;
 }
 .section-client__desc {
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   line-height: 1.8;
 }
 
-.client-2__description {
+.client-right__content {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .client-right__content {
+    text-align: left;
+  }
+}
+.client-right__description {
   color: #6B7280;
   margin-bottom: 24px;
 }
-.client-2__image {
+.client-right__image {
   object-fit: cover;
   border-radius: 20px 0 0 20px;
 }

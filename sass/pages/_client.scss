@@ -52,14 +52,20 @@
   }
 
   &__desc {
-    margin-bottom: 32px;
+    margin-bottom: 12px;
     line-height: 1.8;
   }
 }
 
 
-// Section Client 2 
-.client-2 {
+// Section Client right 
+.client-right {
+  &__content {
+      text-align: center;
+      @include breakpoint(md) {
+        text-align: left;
+      }
+    }
   &__description {
     color: map.get($color-neutral, 500);
     margin-bottom: 24px;
@@ -69,5 +75,4 @@
     object-fit: cover;
     border-radius: 20px 0 0 20px;
   }
-
 }
