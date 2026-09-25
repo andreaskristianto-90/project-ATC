@@ -17,42 +17,48 @@
       <div class="row__col row__col--sm-12">
         <nav class="nav__inner">
           <div class="nav__logo-atc">
+            <!-- Gunakan /img/ untuk merujuk ke root folder -->
             <img src="../img/logo-atc.png" alt="ATC logo" class="nav__logo">
             <span>ATC</span>
           </div>
 
-          <!-- Language switcher + hamburger button -->
+          <!-- Language switcher + hamburger button (Mobile) -->
           <div class="nav__mobile-tools hide-for-md">
             <div class="lang-switch">
-            <a href="index.html" class="lang-switch__item lang-switch__item--active" title="Indonesia">ID</a>
-            <a href="en/index.html" class="lang-switch__item" title="English">EN</a>
+              <!-- Menuju ke root utama bahasa Indonesia -->
+              <a href="/index.html" class="lang-switch__item" title="Indonesia">ID</a>
+              <!-- Menuju ke subfolder en -->
+              <a href="/en/index.html" class="lang-switch__item lang-switch__item--active" title="English">EN</a>
             </div>
             <button type="button" class="btn--hamburger hide-for-md" aria-label="Toggle Navigation" aria-expanded="false">
             <svg width="28" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20M4 12H20M4 18H20" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg>
             </button>
           </div>
 
+          <!-- Menu Navigasi Utama -->
           <div class="nav__content">
             <ul class="nav__list">
               <li class="nav__item is-current">
-                <a href="index.html">Home</a>
+                <a href="/en/index.html">Home</a>
               </li>
               <li class="nav__item">
-                <a href="about.html">About Us</a>
+                <a href="/en/about.html">About Us</a>
               </li>
               <li class="nav__item">
-                <a href="service.html">Services</a>
+                <a href="/en/service.html">Services</a>
               </li>
               <li class="nav__item">
-                <a href="client.html">Clients</a>
+                <a href="/en/client.html">Clients</a>
               </li>
             </ul>
             <div class="nav__divider"></div>
             <div class="nav__actions">
-              <a href="contact.html" class="btn btn--sm btn--transparent">Contact Us</a>
+              <a href="/en/contact.html" class="btn btn--sm btn--transparent">Contact Us</a>
+              
+              <!-- Language switcher (Desktop) -->
               <div class="lang-switch show-for-md">
-                <a href="../index.html" class="lang-switch__item" title="Indonesia">ID</a>
-                <a href="index.html" class="lang-switch__item lang-switch__item--active" title="English">EN</a>
+                <a href="/index.html" class="lang-switch__item" title="Indonesia">ID</a>
+                <a href="/en/index.html" class="lang-switch__item lang-switch__item--active" title="English">EN</a>
               </div>
             </div>
           </div>
@@ -501,11 +507,11 @@
     <div class="row__col row__col--sm-12 row__col--lg-3">
       <h4 class="footer__heading">Navigation</h4>
       <ul class="footer__nav-list">
-        <li><a href="index.html" class="footer__nav-link">Home</a></li>
-        <li><a href="about.html" class="footer__nav-link">About Us</a></li>
-        <li><a href="service.html" class="footer__nav-link">Services</a></li>
-        <li><a href="client.html" class="footer__nav-link">Clients</a></li>
-        <li><a href="contact.html" class="footer__nav-link">Contact</a></li>
+        <li><a href="/en/index.html" class="footer__nav-link">Home</a></li>
+        <li><a href="/en/about.html" class="footer__nav-link">About Us</a></li>
+        <li><a href="/en/service.html" class="footer__nav-link">Services</a></li>
+        <li><a href="/en/client.html" class="footer__nav-link">Clients</a></li>
+        <li><a href="/en/contact.html" class="footer__nav-link">Contact</a></li>
       </ul>
     </div>
 

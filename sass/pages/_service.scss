@@ -37,7 +37,7 @@
 }
 
 .offering-card {
-    margin-bottom: 32px;
+    margin-bottom: 12px;
     padding: 10px 10px 1px;
     background: map.get($color-neutral, 50);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -73,7 +73,7 @@
   }
 
     &__desc {
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     min-height: 3lh;
 
     @include breakpoint(md) {

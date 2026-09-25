@@ -571,7 +571,7 @@ summary::-webkit-details-marker {
 }
 
 .section {
-  padding: 40px 0;
+  padding: 30px 0;
 }
 @media (min-width: 768px) {
   .section {
@@ -626,7 +626,7 @@ summary::-webkit-details-marker {
   font-size: 14px;
 }
 .footer .row {
-  row-gap: 36px;
+  row-gap: 16px;
 }
 .footer__brand {
   margin-bottom: 8px;
@@ -647,7 +647,7 @@ summary::-webkit-details-marker {
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 .footer__nav-list, .footer__contact-list {
   list-style: none;
@@ -1518,7 +1518,7 @@ summary::-webkit-details-marker {
 }
 
 .offering-card {
-  margin-bottom: 32px;
+  margin-bottom: 12px;
   padding: 10px 10px 1px;
   background: #F9FAFB;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -1551,7 +1551,7 @@ summary::-webkit-details-marker {
   color: #111827;
 }
 .offering-card__desc {
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   min-height: 3lh;
 }
 @media (min-width: 768px) {
@@ -1634,7 +1634,6 @@ summary::-webkit-details-marker {
 .contact-section {
   background-color: #ffffff;
   color: #0f172a;
-  padding: 80px 0;
 }
 .contact-section__header {
   text-align: center;
